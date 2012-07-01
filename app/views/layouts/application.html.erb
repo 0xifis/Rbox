@@ -9,110 +9,40 @@
     <%= yield(:head) %>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
   </head>
-  
+
   <body>
-    <div id="fb-root"></div>  
-    <script>(function(d, s, id) {  
-      var js, fjs = d.getElementsByTagName(s)[0];  
-      if (d.getElementById(id)) return;  
-      js = d.createElement(s); js.id = id;  
-      js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";  
-      fjs.parentNode.insertBefore(js, fjs);  
-    }(document, 'script', 'facebook-jssdk'));</script>  
-    
-    <script type="text/javascript">  
-      (function() {  
-        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;  
-        po.src = 'https://apis.google.com/js/plusone.js';  
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);  
-      })();  
-    </script> 
 
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
-        <div class="container">
+      <div class="container">
 
 
-          <a class="btn btn-navbar"
-               data-toggle="collapse"
-               data-target=".nav-collapse"></a> <a class="brand"
-               href="/page/home"><img src="/images/snlogo.PNG"
-               width="111"
-               height="30"
-               alt="supernotes logo" /></a>
+        <a class="btn btn-navbar"
+             data-toggle="collapse"
+             data-target=".nav-collapse"></a> <a class="brand"
+             href="/page/home"><img src="/images/snlogo.PNG"
+             width="111"
+             height="30"
+             alt="supernotes logo" /></a>
 
-          <div class="nav-collapse">
-            <ul class="nav">
-              <li><a href="/page/home">Home</a></li>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li><a href="/page/home">Home</a></li>
 
-              <li><a href="/page/about">About</a></li>
+            <li><a href="/page/about">About</a></li>
 
-              <li><a href="/notes">Notes</a></li>
+            <li><a href="/notes">Notes</a></li>
 
-            </ul>
-
-
-
-            <!-- <form class="navbar-search pull-left">  
-              <input type="text" class="search-query" placeholder="Search">  
-            </form>   -->
-            <%= form_tag notes_path, :method => 'get', :class =>  "navbar-search pull-left", :placeholder => "Search" do %>
-              <p>
-                <%= text_field_tag :search,%>
-              </p>
-            <% end %>
-
-
-            <ul class="nav pull-right">  
-              <li class="dropdown">  
-                <a href="#"  
-                      class="dropdown-toggle"  
-                      data-toggle="dropdown">  
-                      Social  
-                      <b class="caret"></b>  
-                </a>  
-                <ul class="dropdown-menu">  
-                 <li class="socials"><!-- Place this tag where you want the +1 button to render -->  
-            <g:plusone annotation="inline" width="150"></g:plusone>  
-            </li>  
-              <li class="socials"><div class="fb-like" data-send="false" data-width="150" data-show-faces="true"></div></li>  
-              <li class="socials"><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>  
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>  
-                </ul>  
-              </li> 
-              <li class="dropdown">  
-                <a href="#"  
-                      class="dropdown-toggle"  
-                      data-toggle="dropdown">  
-                      Account  
-                      <b class="caret"></b>  
-                </a>  
-                <ul class="dropdown-menu">  
-                  <li class="dropdowntext"><% if user_signed_in? %>Signed in as <b><%= current_user.username %></b>.</li>
-                  <li class="dropdowntext"><%= link_to "Edit Account", "/users/edit" %> </li>
-                  <li class="divider"></li>
-                  <li  class="dropdowntext"> Not you? </li>
-                  <li class="dropdowntext"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %> </li>  
-                  <% else %>
-                  <li><%= link_to "Sign in", new_user_session_path, :controller => :devise, :action => :create, :class => 'btn btn-primary'%><a class="btn" href="/users/register">Sign Up</a></li>
-                  <% end %>
-                   
-              
-                </ul>  
-              </li> 
-              
-            </ul>
-
-          </div><!--/.nav-collapse -->
+          </ul>
         </div>
       </div>
     </div>
+  </div>
 
     <div id="container">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
-      <%= content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
     </div>
   </body>

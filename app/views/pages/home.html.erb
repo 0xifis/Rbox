@@ -1,1 +1,18 @@
-<p> Hello people, welcome to rbox. </p>
+<div class="hero-unit" style"margin-bottom: 30px;">
+ 
+  <h1>Hey There!</h1><br>
+  <p><b>Supernotes Repo</b> is a free-for-all repository of notes. Feel free to browse, steal, share notes. Have fun!</p>
+  <a href="http://twitter.com/#!/vishthemenon"><p style"font-size: 18px;
+  line-height: 27px;">@vishthemenon</p></a>
+  	<ul class="nav nav-list"><li class="divider" style="border-bottom: 2px solid #696969; margin: 15px 0px;"></li></ul>
+<!--     <a class="btn btn-primary btn-large" href="/users/sign_in" >Sign In</a>
+    <a class="btn btn-large" href="/users/register">Sign Up</a> -->
+     <a class="socials" style="float:right"><div class="fb-like" data-send="false" data-width="150" data-show-faces="true"></div></a> 
+    <% if user_signed_in? %><p>Signed in as <i> <%= current_user.username %></i>.</p>
+                <a><%= link_to 'Sign out', destroy_user_session_path, :method => :delete, :class => "btn btn-large" %> </a>  
+                <% else %>
+                <a class="btn btn-primary btn-large" href="/users/sign_in" >Sign In</a> <a class="btn btn-large" href="/users/register">Sign Up</a>
+                <% end %>
+
+</div>
+
