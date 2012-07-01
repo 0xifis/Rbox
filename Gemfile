@@ -17,6 +17,9 @@ gem 'aws-sdk'
 
 gem 'acts_as_tree'
 
+gem 'formtastic', " ~> 2.1.1"
+
+gem 'formtastic-bootstrap'
 
 
 

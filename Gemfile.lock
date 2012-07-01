@@ -54,6 +54,11 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    formtastic (2.1.1)
+      actionpack (~> 3.0)
+    formtastic-bootstrap (1.1.1)
+      formtastic
+      rails (~> 3.1)
     hike (1.2.1)
     httparty (0.8.3)
       multi_json (~> 1.0)
@@ -137,6 +142,8 @@ DEPENDENCIES
   aws-sdk
   coffee-rails (~> 3.2.1)
   devise
+  formtastic (~> 2.1.1)
+  formtastic-bootstrap
   jquery-rails
   nifty-generators
   paperclip
