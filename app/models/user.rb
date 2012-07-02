@@ -12,4 +12,6 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username, :email
   validates_length_of :password, :minimum => 5, :message => "Sorry, your password is too short."
   validates_length_of :username, :in => 5..15, :message => "Sorry, your username has to be 5-20 characters long." 
+
+  has_many :assets
 end

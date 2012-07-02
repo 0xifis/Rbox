@@ -1,0 +1,9 @@
+<!-- TODO convert form to semantic form and fix form paragraphing and styling-->
+<%= form_for @asset do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :uploaded_file, "File" %><br />
+    <%= f.file_field :uploaded_file %>
+  </p>
+  <p><%= f.submit "Upload"%></p>
+<% end %>

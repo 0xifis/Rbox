@@ -1,4 +1,8 @@
 Rbox::Application.routes.draw do
+  resources :assets
+
+  match "assets/get/:id" => "assets#get", :as => "download"
+
   get "page/home"
 
   get "page/about"

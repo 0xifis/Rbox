@@ -1,0 +1,20 @@
+<% title "Assets" %>
+
+<table class="table table-striped">
+  <tr>
+    <th>User</th>
+    <th>Uploaded File</th>
+    <th colspan="3">Actions</th>
+  </tr>
+  <% for asset in @assets %>
+    <tr>
+      <td><%= User.find(asset.user_id).username %></td>
+      <td><%= link_to asset.file_name, download_url(asset) %></td>
+      <td><%= link_to "Show", asset %></td>
+      <td><%= link_to "Edit", edit_asset_path(asset) %></td>
+      <td><%= link_to "Destroy", asset, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<a href="/assets/new" class="btn">New Asset</a>
