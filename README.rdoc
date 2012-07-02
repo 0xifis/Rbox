@@ -4,7 +4,7 @@ RBox is a simple "dropbox-clone" built on Ruby and Rails.
 
 == Milestones
 
-1. Online file storage
+1. Online file storage - done 6:06pm, 2/7/2012
 2. File sharing between users and file syncing
 3. Local file syncing based on the RubyDrop Library.
 4. More awesome stuff I have not thought of.
