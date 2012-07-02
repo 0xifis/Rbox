@@ -1,9 +1,17 @@
 Rbox::Application.routes.draw do
+  get "page/home"
+
+  get "page/about"
+
+  get "page/contact_us"
+
   devise_for :users
 
-  root :to => "pages#home"
+  resources :pages
 
-  match '/home' => 'pages#home'
+  root :to => "page#home"
+
+  match '/home' => 'page#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

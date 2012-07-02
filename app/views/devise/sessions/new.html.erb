@@ -1,12 +1,17 @@
-<h2>Sign in</h2>
+<h1><%=h content_for(:title, "Sign In") %></h1>
 
-<%= semantic_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+<h2>Sign In</h2>
+
+<%= semantic_form_for(resource, :as => resource_name, :url => session_path(resource_name), :class => "form-horizontal") do |f| %>
   <%= devise_error_messages! %>
   <%= f.inputs do %>
   	<%= f.input :username %>
   	<%= f.input :password, as: :password %>
   <% end %>
-  <%= f.buttons %>
+  <%= f.actions do %>
+  	<%= f.action :submit, label: "Sign In", button_html: { class: "btn btn-primary" }%>
+  	<a href="/home" class="btn">Cancel</a>
+  <% end %>
 <% end %>
 
 <%= render "devise/shared/links" %>

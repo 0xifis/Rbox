@@ -10,7 +10,8 @@
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
-article,
+artic
+le,
 aside,
 details,
 figcaption,
@@ -4567,7 +4568,7 @@ legend,
 label,
 .help-block,
 .input-file {
-  color: rgba(255, 255, 255, 0.9);
+  color: #7a7a7a;
   border: 0px solid transparent;
 }
 input,
