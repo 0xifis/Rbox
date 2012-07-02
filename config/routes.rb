@@ -1,4 +1,6 @@
 Rbox::Application.routes.draw do
+  resources :folders
+  resources :pages
   resources :assets
 
   match "assets/get/:id" => "assets#get", :as => "download"
@@ -11,7 +13,6 @@ Rbox::Application.routes.draw do
 
   devise_for :users
 
-  resources :pages
 
   root :to => "page#home"
 
