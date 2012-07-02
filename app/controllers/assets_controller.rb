@@ -46,6 +46,10 @@ class AssetsController < ApplicationController
     asset = current_user.assets.find_by_id(params[:id])
     if asset 
       redirect_to asset.uploaded_file.url, :type => asset.uploaded_file_content_type
+      tempdata = open(URI.parse(URI.encode(asset.uploaded_file.url)))
+      send_data data, filename: asset.uploaded_file_file_name
+      #public link no restriction
+      #redirect_to asset.uploaded_file.url, :type => asset.uploaded_file_content_type 
     else
       flash[:error] = "Hello boss, if not yours den why you want!"
       redirect_to assets_path
