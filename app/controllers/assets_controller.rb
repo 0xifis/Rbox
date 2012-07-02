@@ -45,7 +45,7 @@ class AssetsController < ApplicationController
   def get
     asset = current_user.assets.find_by_id(params[:id])
     if asset 
-      send_file asset.uploaded_file.path, type: asset.uploaded_file_content_type
+      redirect_to asset.uploaded_file.url, :type => asset.uploaded_file_content_type
     else
       flash[:error] = "Hello boss, if not yours den why you want!"
       redirect_to assets_path

@@ -3,8 +3,10 @@ class Asset < ActiveRecord::Base
   belongs_to :user
   #Paperclip Setup
   has_attached_file :uploaded_file,
-  					:url => "/assets/get/:id",
-  					:path => ":rails_root/assets/:id/:basename.:extension"  
+  					:path => "assets/:id/:basename.:extension",
+            :storage => :s3,
+            :s3_credentials => "#{Rails.root}/config/amazon_s3.yml",
+            :bucket => "rbox.assets"  
   validates_attachment_presence :uploaded_file
 
   def file_name
