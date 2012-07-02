@@ -1,5 +1,5 @@
 class AssetsController < ApplicationController
-
+  require 'open-uri'
   before_filter :authenticate_user!
 
   def index
@@ -45,9 +45,9 @@ class AssetsController < ApplicationController
   def get
     asset = current_user.assets.find_by_id(params[:id])
     if asset 
-      redirect_to asset.uploaded_file.url, :type => asset.uploaded_file_content_type
+      # redirect_to asset.uploaded_file.url, :type => asset.uploaded_file_content_type
       tempdata = open(URI.parse(URI.encode(asset.uploaded_file.url)))
-      send_data data, filename: asset.uploaded_file_file_name
+      send_data tempdata, filename: asset.uploaded_file_file_name
       #public link no restriction
       #redirect_to asset.uploaded_file.url, :type => asset.uploaded_file_content_type 
     else
@@ -55,5 +55,6 @@ class AssetsController < ApplicationController
       redirect_to assets_path
     end
   end
+
 
 end

@@ -62,7 +62,8 @@
             <li class="socials"><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>  
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>  
               </ul>   -->
-            </li> 
+            <!-- </li>  -->
+            <li><a href="/assets">My Files</a></li>
             <li class="dropdown">  
               <a href="#"  
                     class="dropdown-toggle"  
@@ -71,10 +72,10 @@
                     <b class="caret"></b>  
               </a>  
               <ul class="dropdown-menu">  
-                <li class="dropdowntext"><% if user_signed_in? %>Signed in as <b><%= current_user.username %></b>.</li>
+                <li class="dropdowntext"><% if user_signed_in? %><p>Signed in as <b><%= current_user.username %></b>.</p></li>
                 <li class="dropdowntext"><%= link_to "Edit Account", "/users/edit" %> </li>
                 <li class="divider"></li>
-                <li  class="dropdowntext"> Not you? </li>
+                <li  class="dropdowntext"> <p> Not you? </p></li>
                 <li class="dropdowntext"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %> </li>  
                 <% else %>
                 <li><%= link_to "Sign in", new_user_session_path, :controller => :devise, :action => :create, :class => ''%><a href="/users/register">Sign Up</a></li>
