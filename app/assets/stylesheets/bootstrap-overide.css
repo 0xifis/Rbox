@@ -23,6 +23,13 @@
 }
 */
 
+@media screen and (max-width: 500px) {
+   th.optional, 
+   td.optional {
+      display: none;
+   }
+}
+
 .asset_list_header, .asset_list, .asset_details {  
     width:800px;  
     font-weight:bold;  
@@ -84,73 +91,12 @@ p small {
   font-weight: 200;
   line-height: 30px;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  font-family: 'Lobster', cursive;
-  font-weight: normal;
-  color: #0f8790;
-  text-rendering: optimizelegibility;
-}
-h1 small,
-h2 small,
-h3 small,
-h4 small,
-h5 small,
-h6 small {
-  font-weight: normal;
-  color: #aaaaaa;
-}
-h1 {
-  font-size: 30px;
-  line-height: 40px;
-}
-h1 small {
-  font-size: 18px;
-}
-h2 {
-  font-size: 24px;
-  line-height: 40px;
-}
-h2 small {
-  font-size: 18px;
-}
-h3 {
-  font-size: 18px;
-  line-height: 30px;
-}
-h3 small {
-  font-size: 14px;
-}
-h4,
-h5,
-h6 {
-  line-height: 20px;
-}
-h4 {
-  font-size: 14px;
-}
-h4 small {
-  font-size: 12px;
-}
-h5 {
-  font-size: 12px;
-}
-h6 {
-  font-size: 11px;
-  color: #aaaaaa;
-  text-transform: uppercase;
-}
 
 #container {
   width: 80%;
   margin: auto;
-  background-color: white;
-  /*background: url('/images/blueprint.jpg');*/
+  /*background-color: white;
+  background: url('/images/blueprint.jpg');*/
   padding: 20px 10px ;
   border: solid 20px white opacity:1;
   /*border-radius: 12px;*/

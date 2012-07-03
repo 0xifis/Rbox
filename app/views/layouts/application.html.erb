@@ -63,7 +63,7 @@
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>  
               </ul>   -->
             <!-- </li>  -->
-            <li><a href="/assets">My Files</a></li>
+            <li><a href="/page/home">My Files</a></li>
             <li class="dropdown">  
               <a href="#"  
                     class="dropdown-toggle"  
@@ -91,10 +91,10 @@
     </div>
   </div>
 
-    <div id="container">
+    <div class="container" id="container">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <% end %>
+      <% end %>  
       <%= yield %>
     </div>
   </body>

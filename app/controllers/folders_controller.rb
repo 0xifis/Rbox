@@ -10,12 +10,16 @@ class FoldersController < ApplicationController
 
   def new
     @folder = current_user.folders.new
+    if params[:folder_id]
+      @current_folder = current_user.folders.find(params[:folder_id])
+      @folder.parent_id = @current_folder.id
+    end
   end
 
   def create
     @folder = current_user.folders.new(params[:folder])
     if @folder.save
-      redirect_to @folder, :notice => "Successfully created folder."
+      redirect_to browse_url(@folder), :notice => "Successfully created folder."
     else
       render :action => 'new'
     end
@@ -28,7 +32,7 @@ class FoldersController < ApplicationController
   def update
     @folder = current_user.folders.find(params[:id])
     if @folder.update_attributes(params[:folder])
-      redirect_to @folder, :notice  => "Successfully updated folder."
+      redirect_to browse_url(@folder), :notice  => "Successfully updated folder."
     else
       render :action => 'edit'
     end
@@ -36,7 +40,12 @@ class FoldersController < ApplicationController
 
   def destroy
     @folder = current_user.folders.find(params[:id])
+    @former_parent = @folder.parent_id
     @folder.destroy
-    redirect_to folders_url, :notice => "Successfully destroyed folder."
+    if @former_parent
+      redirect_to browse_url(@former_parent), :alert => "Successfully destroyed folder."
+    else
+      redirect_to root_url, alert: "Successfully destroyed folder."
+    end
   end
 end
