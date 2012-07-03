@@ -6,6 +6,7 @@ Rbox::Application.routes.draw do
   match "assets/get/:id" => "assets#get", :as => "download"
   match "browse/:folder_id" => "page#browse", :as => "browse"  
   match "browse/:folder_id/new_folder" => "folders#new", :as => "new_sub_folder" 
+  match "browse/:folder_id/new_file" => "assets#new", :as => "new_sub_file"  
   
   get "page/home"
 

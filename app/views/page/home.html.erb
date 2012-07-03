@@ -4,12 +4,13 @@
    <p>The file sharing solution that is too good to ignore.</p>  
      </div>
 <% else %>  
-
+  <div class="page-header">
   <% if params[:folder_id] %>
     <%= content_tag(:h1, current_user.folders.find(params[:folder_id]).name)%>
   <% else %>
-    <h1>My Files</h1> </br>
+    <h1>My Files</h1>
   <% end %>
+</div>
   <div class="breadcrumb">          
     <% if @current_folder %>  
         <%= link_to current_user.username, root_url %>  
@@ -48,10 +49,12 @@
     <% end %>
   </table>
   <div class="form-actions">
-  <a href="/assets/new" class="btn btn-primary">Upload</a>
+
   <% if @current_folder %>  
-      <a><%= link_to "New Folder", new_sub_folder_path(@current_folder), class: "btn" %></a>  
-  <% else %>  
+      <a><%= link_to "New Folder", new_sub_folder_path(@current_folder), class: "btn" %></a> 
+      <a><%= link_to "Upload", new_sub_file_path(@current_folder), class: "btn btn-primary" %></a>  
+  <% else %>
+      <a><%= link_to "Upload", new_asset_path, class: "btn btn-primary" %></a>  
       <a><%= link_to "New Folder", new_folder_path, class: "btn" %></a>  
   <% end %>  
 </div>
