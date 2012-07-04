@@ -81,7 +81,7 @@
                 <li  class="dropdowntext"> <p> Not you? </p></li>
                 <li class="dropdowntext"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %> </li>  
                 <% else %>
-                <li><%= link_to "Sign in", new_user_session_path, :controller => :devise, :action => :create, :class => ''%><a href="/users/register">Sign Up</a></li>
+                <li><%= link_to "Sign in", new_user_session_path, :controller => :devise, :action => :create, :class => ''%><a href="/users/sign_up">Sign Up</a></li>
                 <% end %>
                  
             

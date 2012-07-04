@@ -2,19 +2,23 @@ Rbox::Application.routes.draw do
   resources :folders
   resources :pages
   resources :assets
+  resources :authentication
+
+  get "authentication/create"
 
   match "assets/get/:id" => "assets#get", :as => "download"
   match "browse/:folder_id" => "page#browse", :as => "browse"  
   match "browse/:folder_id/new_folder" => "folders#new", :as => "new_sub_folder" 
   match "browse/:folder_id/new_file" => "assets#new", :as => "new_sub_file"  
-  
+  match '/auth/:provider/callback' ,  to: 'authentication#create'
+
   get "page/home"
 
   get "page/about"
 
   get "page/contact_us"
 
-  devise_for :users
+  devise_for :users, :path_names => { :sign_up => "register"}, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
 
   root :to => "page#home"

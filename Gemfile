@@ -9,6 +9,8 @@ gem 'pg'
 
 gem 'devise'
 
+gem 'omniauth-facebook'
+
 gem 'nifty-generators', :group => :development
 
 gem 'paperclip'
