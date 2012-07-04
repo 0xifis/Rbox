@@ -11,9 +11,10 @@
     <h1>My Files</h1>
   <% end %>
 </div>
-  <div class="breadcrumb">          
+  <div class="breadcrumb"> 
+  <%= link_to current_user.username, root_url %>           
     <% if @current_folder %>  
-        <%= link_to current_user.username, root_url %>  
+        
         <% @current_folder.ancestors.reverse.each do |folder| %>  
             <span class="divider">/</span><%= link_to folder.name, browse_path(folder) %>  
         <% end %>  

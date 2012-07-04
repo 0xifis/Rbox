@@ -26,7 +26,8 @@ class FoldersController < ApplicationController
   end
 
   def edit
-    @folder = current_user.folders.find(params[:folder_id])  
+    @folder = current_user.folders.find(params[:folder_id]) 
+    @current_folder = @folder.parent     
   end
 
   def update
