@@ -19,12 +19,18 @@ class AssetsController < ApplicationController
   end
 
   def create
-    @asset = current_user.assets.new(params[:asset])
-    if @asset.save
-      redirect_to @asset, :notice => "Successfully created asset."
-    else
-      render :action => 'new'
-    end
+   @asset = current_user.assets.build(params[:asset])  
+  if @asset.save  
+   flash[:notice] = "Successfully uploaded the file."  
+  
+   if @asset.folder
+     redirect_to browse_path(@asset.folder)   
+   else  
+     redirect_to root_url  
+   end        
+  else  
+   render :action => 'new'  
+  end  
   end
 
   def edit
