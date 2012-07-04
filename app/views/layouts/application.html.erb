@@ -14,7 +14,7 @@
     <%= yield(:head) %>
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="assets/images/favicon-apple.png">
+    <link rel="apple-touch-icon" href="favicon_apple.PNG">
   </head>
 
   <body>
@@ -36,7 +36,7 @@
 
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
-      <div class="container">
+      <div class="container-fluid">
 
 
         <a class="btn btn-navbar"
@@ -97,7 +97,7 @@
     </div>
   </div>
 
-    <div class="container" id="container">
+    <div class="container-fluid" id="container">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>  
