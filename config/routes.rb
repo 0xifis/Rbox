@@ -19,7 +19,7 @@ Rbox::Application.routes.draw do
 
   get "page/contact_us"
 
-  devise_for :users, :path_names => { :sign_up => "register"}, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
 
   root :to => "page#home"

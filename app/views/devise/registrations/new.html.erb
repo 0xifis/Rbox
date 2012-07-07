@@ -10,7 +10,11 @@
   	<%= f.input :password, as: :password %>
   	<%= f.input :password_confirmation, as: :password %>
   <% end %>
-  <%= f.buttons %>
+  <div class="form-actions">
+  <%= f.actions do %>
+    <%= f.action :submit, label: "Sign Up", button_html: { class: "btn btn-primary" }, :wrapper_html => { :style => "display: inline; list-style-type:none;" } %>
+    <%= f.action :cancel, label: "cancel", button_html: { class: "btn" }, :wrapper_html => { :style => "display: inline; list-style-type:none;" } %>
+  </div>
 <% end %>
 
 <%= render "devise/shared/links" %>

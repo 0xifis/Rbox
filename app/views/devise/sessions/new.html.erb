@@ -8,9 +8,11 @@
   	<%= f.input :username %>
   	<%= f.input :password, as: :password %>
   <% end %>
+  <div class="form-actions">
   <%= f.actions do %>
-  	<%= f.action :submit, label: "Sign In", button_html: { class: "btn btn-primary" }%>
-  	<a href="/home" class="btn">Cancel</a>
+  	<%= f.action :submit, label: "Sign In", button_html: { class: "btn btn-primary" }, :wrapper_html => { :style => "display: inline; list-style-type:none;" } %>
+  	<%= f.action :cancel, label: "cancel", button_html: { class: "btn" }, :wrapper_html => { :style => "display: inline; list-style-type:none;" } %>
+  </div>
   <% end %>
 <% end %>
 
