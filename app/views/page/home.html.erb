@@ -43,15 +43,15 @@
       </tr><% @folders.each do |folder| %>
       <tr>
         <td colspan="4">
-          <%= link_to folder.name, browse_path(folder) %>
+          <i class="icon-folder-close" style="padding-right:7px"></i><%= link_to folder.name, browse_path(folder) %>
         </td>
         <td>
-          <%= link_to "Share" %><%= link_to "Rename", rename_folder_path(folder) %><%= link_to "Delete", folder, :confirm => 'Are you sure?', :method => :delete %>
+          <%= link_to "Share" %> | <%= link_to "Rename", rename_folder_path(folder) %> | <%= link_to "Delete", folder, :confirm => 'Are you sure?', :method => :delete %>
         </td>
       </tr><% end %><% for asset in @assets %>
       <tr>
         <td>
-          <%= link_to asset.file_name, download_url(asset) %>
+          <i class="icon-file" style="padding-right:7px"></i><%= link_to asset.file_name, download_url(asset) %>
         </td>
         <td class="optional">
           <%= number_to_human_size(asset.file_size, :precision => 2)%>
@@ -64,7 +64,7 @@
         </td><!-- <td><%= link_to "Show", asset %></td> -->
         <!-- <td><%= link_to "Edit", edit_asset_path(asset) %></td> -->
         <td>
-          <%= link_to "Download", download_url(asset) %><%= link_to "Delete", asset, :confirm => 'Are you sure?', :method => :delete %>
+          <%= link_to "Download", download_url(asset) %> | <%= link_to "Delete", asset, :confirm => 'Are you sure?', :method => :delete %>
         </td>
       </tr><% end %>
     </table>
