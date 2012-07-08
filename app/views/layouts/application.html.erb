@@ -9,7 +9,7 @@
 
     <title>RBox | <%= content_for?(:title) ? yield(:title) : "A ruby file sharing solution" %></title>
     <%= stylesheet_link_tag "application" %>
-    <%= javascript_include_tag :defaults, 'http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js', "application" %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
 
@@ -41,8 +41,8 @@
 
         <a class="btn btn-navbar"
              data-toggle="collapse"
-             data-target=".nav-collapse"></a> <a class="brand h1"
-             href="/page/home">Rbox</a>
+             data-target=".nav-collapse"></a></i><a class="brand h1"
+              href="/page/home"><i class="icon-hdd"></i>Rbox</a>
 
         <div class="nav-collapse">
           <ul class="nav">
