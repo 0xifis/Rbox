@@ -16,6 +16,13 @@ class User < ActiveRecord::Base
   has_many :authentications, :dependent => :delete_all
   has_many :assets
   has_many :folders
+
+  #this is for folders which this user has shared  
+  has_many :shared_folders, :dependent => :destroy  
+    
+  #this is for folders which the user has been shared by other users  
+  has_many :being_shared_folders, :class_name => "SharedFolder", :foreign_key => "shared_user_id", :dependent => :destroy  
+  
   def apply_omniauth(auth)
     # In previous omniauth, 'user_info' was used in place of 'raw_info'
     self.email = auth['extra']['raw_info']['email']
